@@ -1,0 +1,148 @@
+/* Fonts */
+/* Importar aquí la font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #fbfbfb;
+    font-size: 18px;
+    line-height: 1.2;
+    color:#0f0f0f;
+}
+
+header{
+    background-color: #57886C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    height: 90px;
+    width: 100%;
+    box-shadow: 0px 3px 10px -5px #5f5f5f;
+    position: fixed;
+    top:0;
+    left: 0;
+}
+
+h1{
+    font-size: 36px;
+    text-align: center;
+}
+
+h2{
+    font-size: 28px;
+    text-align: center;
+}
+
+p{
+    margin: 20px 0px;
+    padding: 20px 0px;
+    text-align: justify;
+}
+.imagen_inicio{
+    margin-bottom: 20px;
+}
+
+
+.imagen_inicio img{
+    width: 400px;
+    margin-top: 80px;
+}
+
+.logo{
+    width:100px;
+}
+
+.menu{
+    display: flex;
+    font-size: 20px;
+    color: white;
+}
+
+.menu li a{
+    padding: 16px;
+    border-radius: 5px;
+}
+
+
+.menu-item{
+    padding: 16px;
+    
+} 
+
+.active{
+    background-color: #C3D5C5;
+    transition: 0.5s;
+}
+
+
+footer{
+    color: #fbfbfb;
+    background-color: #81A684;
+    text-align: center;
+    padding: 24px;
+    height: 90px;
+}
+
+footer p{
+    text-align: center;
+    padding: 0px 0px;
+}
+
+section{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 16px;
+padding-top: 40px;
+margin: 20px 20px;
+}
+
+#inicio{
+    justify-content: space-around;
+}
+
+
+/* Media query */
+@media (min-width: 1024px) {
+
+    #inicio{
+    flex-direction:row;
+    padding-top: 80px;
+    }
+
+    .boton_cv{
+        text-align: left;
+    
+    }
+
+    h1{
+        font-size:48px;
+        text-align: left;
+    }
+    h2{
+        font-size:32px;
+    }
+
+    .presentacion{
+        width:50%;
+        text-align:left;
+    }
+
+    .presentacion p{
+        text-align: left;
+    }
+
+    .imagen_inicio img{
+        margin-top: 20px;
+        border: 2px solid;
+    }
+    
+
+  }
