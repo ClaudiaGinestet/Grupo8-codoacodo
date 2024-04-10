@@ -2,6 +2,28 @@
 /* Importar aquí la font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Para que el scrolleo en la one page sea suave */
+    scroll-behavior: smooth;
+}
+
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
 main {
     max-width: 1200px;
     margin: auto;
@@ -55,7 +77,7 @@ p{
 }
 
 .logo{
-    width:100px;
+    width:300px;
 }
 
 .menu{
@@ -108,6 +130,17 @@ margin: 20px 20px;
     justify-content: space-around;
 }
 
+.iconos{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.iconos img{
+    width: 50px;
+    padding: 0px 0px; 
+    margin: 0px 0px;
+}
 
 /* Media query */
 @media (min-width: 1024px) {
