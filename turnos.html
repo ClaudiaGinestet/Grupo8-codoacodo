@@ -45,7 +45,7 @@
                     <div class="row g-0">
                         <div class="col-md-12 col-lg-8">
                             <div class="items clean-block clean-form dark">
-                                <form action="turnos.html" method="post">
+                                <form method="post" onsubmit="return validar()">
                                     <p>Solicitá un turno y nos contactaremos a la brevedad con vos.</p>
                                     <div class="mb-3"><label class="form-label"><strong>Documento de
                                                 Identidad</strong></label>
@@ -55,13 +55,13 @@
                                                 <option value="1">DNI</option>
                                                 <option value="2">Pasaporte</option>
                                             </select>
-                                            <input class="form-control input-dni2" type="number" id="identificacion_numero" 
-                                                data-bs-theme="light">
+                                            <input class="form-control input-dni2" type="number" id="identificacion_numero" data-bs-theme="light" >
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label"><strong>Nombre</strong></label>
-                                        <input class="form-control" type="text" id="nombre" data-bs-theme="light">
+                                        <input class="form-control" type="text" id="nombre" data-bs-theme="light" placeholder="Ingrese su nombre">
+                                        <span  id="nombreError" class="error-mensaje" ></span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label"><strong>Apellido</strong></label>

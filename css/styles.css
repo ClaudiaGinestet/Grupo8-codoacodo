@@ -171,6 +171,12 @@ padding-top: 40px;
     display: flex !important;
 }
 
+.error-mensaje {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
 @media (min-width: 576px){
     .clean-navbar.fixed-top+.page {
         padding-top: 5rem;
