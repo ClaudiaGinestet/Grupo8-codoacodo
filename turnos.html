@@ -48,39 +48,49 @@
                                 <form method="post" onsubmit="return validar()">
                                     <p>Solicitá un turno y nos contactaremos a la brevedad con vos.</p>
                                     <div class="mb-3"><label class="form-label"><strong>Documento de
-                                                Identidad</strong></label>
+                                                Identidad</strong> <span class="error-mensaje">*</span></label>
                                         <div class="flex">
-                                            <select class="form-control input-dni" id="identificacion_tipo">
+                                            <select class="form-control input-dni" id="IdentificacionTipo">
                                                 <option value="">Seleccione..</option>
                                                 <option value="1">DNI</option>
                                                 <option value="2">Pasaporte</option>
                                             </select>
-                                            <input class="form-control input-dni2" type="number" id="identificacion_numero" data-bs-theme="light" >
+                                            <input class="form-control input-dni2" type="number" id="IdentificacionNumero" data-bs-theme="light" placeholder="Ingrese su identifación">
                                         </div>
+                                       <span id="IdentificacionError" class="error-mensaje"></span>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label"><strong>Nombre</strong></label>
-                                        <input class="form-control" type="text" id="nombre" data-bs-theme="light" placeholder="Ingrese su nombre">
-                                        <span  id="nombreError" class="error-mensaje" ></span>
+                                        <label class="form-label"><strong>Nombre</strong> <span class="error-mensaje">*</span></label>
+                                        <input class="form-control" type="text" id="Nombre" data-bs-theme="light" placeholder="Ingrese su nombre">
+                                        <span  id="NombreError" class="error-mensaje" ></span>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label"><strong>Apellido</strong></label>
-                                        <input class="form-control" type="text" id="apellido" data-bs-theme="light">
+                                        <label class="form-label"><strong>Apellido</strong> <span class="error-mensaje">*</span></label>
+                                        <input class="form-control" type="text" id="Apellido" data-bs-theme="light" placeholder="Ingrese su apellido">
+                                        <span  id="ApellidoError" class="error-mensaje" ></span>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label"><strong>Email</strong></label>
+                                        <label class="form-label"><strong>Email</strong> <span class="error-mensaje">*</span></label>
                                         <input class="form-control" type="email" id="email" data-bs-theme="light">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label"><strong>Teléfono</strong></label>
+                                        <label class="form-label"><strong>Teléfono</strong> <span class="error-mensaje">*</span></label>
                                         <input class="form-control" type="number" id="telefono" data-bs-theme="light">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label"><strong>Fecha / Hora</strong></label>
+                                        <label class="form-label"><strong>Prepaga</strong> <span class="error-mensaje">*</span></label>
+                                        <input class="form-control" type="number" id="telefono" data-bs-theme="light">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label"><strong>Plan</strong> <span class="error-mensaje">*</span></label>
+                                        <input class="form-control" type="number" id="telefono" data-bs-theme="light">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label"><strong>Fecha / Hora</strong> <span class="error-mensaje">*</span></label>
                                         <input class="form-control" type="datetime-local" id="turno" data-bs-theme="light">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label"><strong>Provincia</strong></label>
+                                        <label class="form-label"><strong>Provincia</strong> <span class="error-mensaje">*</span></label>
                                         <select class="form-control" id="provincia">
                                             <option value="">Seleccione..</option>
                                             <option value="1">Ciudad de Buenos Aires</option>
@@ -115,7 +125,7 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label"><strong>Especialidad</strong></label>
+                                        <label class="form-label"><strong>Especialidad</strong> <span class="error-mensaje">*</span></label>
                                         <select class="form-control" id="especialidad">
                                             <option value="">Seleccione..</option>
                                             <option value="001">ADOLESCENCIA Y PUBERTAD</option>
@@ -281,7 +291,8 @@
                                         <textarea class="form-control" id="observaciones" data-bs-theme="light"></textarea>
                                     </div>
                                     <div class="mb-3 boton-turno">
-                                        <button class="btn btn-bd-primary" type="submit">Registrar Turno <i class="fa-solid fa-paper-plane"></i></button>
+                                        <button class="btn btn-bd-primary" type="submit">Registrar Turno <i class="fa-solid fa-paper-plane"></i></button> &nbsp;&nbsp;
+                                        <button class="btn btn-warning" type="reset">Limpiar <i class="fa-solid fa-eraser"></i></button>
                                     </div>
                                 </form>
                             </div>
@@ -306,16 +317,13 @@
 
     <footer class="page-footer dark">
         <div class="footer-copyright">
-            <p> <img src="images/logo-nombre-blanco.png" alt="Logo Nombre" class="logo-nombre"> <span
-                    id="fechafoot"></span></p>
+            <p> <img src="images/logo-nombre-blanco.png" alt="Logo Nombre" class="logo-nombre"> <span id="fechafoot"></span></p>
         </div>
     </footer>
 
     <!-- JS -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"  crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/9c41c1c996.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 
