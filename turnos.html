@@ -38,14 +38,19 @@
             <div class="container">
                 <div class="block-heading">
                     <h2>Turnos Web</h2>
+                    
+
                     <p>Ya podés acceder a turnos con tu médico de cabecera y especialistas a través de la turnera web.
                     </p>
+                    <div class="alert alert-success" role="alert" style="visibility: hidden" id="MensajeFormulario">
+                        <span>Su turno ha sido registrado bajo el Número de trámite <strong>#<span id="NumeroTramite"></span></strong> &nbsp;y será validado por un operador, muchas gracias.</span>
+                      </div>
                 </div>
                 <div class="content">
                     <div class="row g-0">
                         <div class="col-md-12 col-lg-8">
                             <div class="items clean-block clean-form dark">
-                                <form action="#" method="post" onsubmit="return validar()">
+                                <form action="turnos.html?enviado=si" method="post" onsubmit="return validar()">
                                     <p>Solicitá un turno y nos contactaremos a la brevedad con vos.</p>
                                     <div class="mb-3"><label class="form-label"><strong>Documento de
                                                 Identidad</strong> <span class="error-mensaje">*</span></label>
@@ -55,7 +60,7 @@
                                                 <option value="1">DNI</option>
                                                 <option value="2">Pasaporte</option>
                                             </select>
-                                            <input class="form-control input-dni2" type="number" id="IdentificacionNumero" data-bs-theme="light" placeholder="Ingrese su identifación">
+                                            <input class="form-control input-dni2" type="number" id="IdentificacionNumero" data-bs-theme="light" placeholder="Ingrese su identificación">
                                         </div>
                                        <span id="IdentificacionError" class="error-mensaje"></span>
                                     </div>
@@ -71,27 +76,32 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label"><strong>Email</strong> <span class="error-mensaje">*</span></label>
-                                        <input class="form-control" type="email" id="email" data-bs-theme="light">
+                                        <input class="form-control" type="email" id="Email" data-bs-theme="light">
+                                        <span  id="EmailError" class="error-mensaje" ></span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label"><strong>Teléfono</strong> <span class="error-mensaje">*</span></label>
-                                        <input class="form-control" type="number" id="telefono" data-bs-theme="light">
+                                        <input class="form-control" type="number" id="Tele" data-bs-theme="light">
+                                        <span  id="TeleError" class="error-mensaje" ></span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label"><strong>Prepaga</strong> <span class="error-mensaje">*</span></label>
-                                        <input class="form-control" type="number" id="telefono" data-bs-theme="light">
+                                        <input class="form-control" type="text" id="Prepaga" data-bs-theme="light">
+                                        <span  id="PrepagaError" class="error-mensaje" ></span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label"><strong>Plan</strong> <span class="error-mensaje">*</span></label>
-                                        <input class="form-control" type="number" id="telefono" data-bs-theme="light">
+                                        <input class="form-control" type="text" id="Planes" data-bs-theme="light">
+                                        <span  id="PlanesError" class="error-mensaje" ></span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label"><strong>Fecha / Hora</strong> <span class="error-mensaje">*</span></label>
-                                        <input class="form-control" type="datetime-local" id="turno" data-bs-theme="light">
+                                        <input class="form-control" type="datetime-local" id="Fecha" data-bs-theme="light">
+                                        <span  id="FechaError" class="error-mensaje" ></span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label"><strong>Provincia</strong> <span class="error-mensaje">*</span></label>
-                                        <select class="form-control" id="provincia">
+                                        <select class="form-control" id="Provincia">
                                             <option value="">Seleccione..</option>
                                             <option value="1">Ciudad de Buenos Aires</option>
                                             <option value="2">GBA Zona Norte</option>
@@ -123,10 +133,11 @@
                                             <option value="28">Tierra del Fuego</option>
                                             <option value="29">Tucumán</option>
                                         </select>
+                                        <span  id="ProvinciaError" class="error-mensaje" ></span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label"><strong>Especialidad</strong> <span class="error-mensaje">*</span></label>
-                                        <select class="form-control" id="especialidad">
+                                        <select class="form-control" id="Especialidad">
                                             <option value="">Seleccione..</option>
                                             <option value="001">ADOLESCENCIA Y PUBERTAD</option>
                                             <option value="002">ALERGIA E INMUNOLOGÍA</option>
@@ -285,6 +296,7 @@
                                             <option value="153">UROLOGÍA</option>
                                             <option value="154">UROLOGÍA INFANTIL</option>
                                         </select>
+                                        <span  id="EspecialidadError" class="error-mensaje" ></span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label"><strong>Observaciones</strong></label>
