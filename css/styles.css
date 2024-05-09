@@ -91,11 +91,15 @@ p{
 }
 
 
-footer{
+/* Footer */
+footer {
     color: #fbfbfb;
     text-align: center;
     padding: 24px;
     height: 90px;
+    background-color: #33331587; 
+    margin-left: 20px; 
+    margin-right: 20px; 
 }
 
 footer p{
